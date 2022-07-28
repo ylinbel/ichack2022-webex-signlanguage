@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webex: Sign Language</title>
+    <link rel="stylesheet" href="https://downloads.momentum-ui.com/@momentum-ui/core/css/momentum-ui.css">
+    <style>
+      main {
+        padding: 10px;
+      }
+      table {
+        border-collapse: collapse;
+        padding: 10px;
+        margin: 10px;
+      }
+      table, th, td {
+        border: 1px solid black;
+      }
+      thead th {
+        font-weight: bold;
+      }
+      tbody td {
+        min-width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="md-top-bar md-top-bar--dark" role="navigation">
+      <div class="md-top-bar__container row">
+        <div class="md-top-bar__brand">
+          <a class="md-brand" href="#">
+            <div class="md-brand__title">Webex Sign Language Translator</div>
+          </a>
+        </div>
+        <nav class="md-top-bar__nav ">
+            <div class="md-list md-list--horizontal" role="list">
+            </div>
+          </nav>
+      </div>
+    </header>
+    <main>
+      <div>
+        <div class="row">
+          <div class="md-input-group small-10 columns">
+            <input
+                class="md-input"
+                id="access-token"
+                name="accessToken"
+                placeholder="Your access token"
+                type="text">
+          </div>
+          <div class="small-2 columns">
+            <button id="connect" title="connect" type="button" class="md-button">Connect</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 columns">
+            <p id="connection-status">Disconnected</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="md-input-group small-10 columns">
+            <input
+                class="md-input"
+                id="invitee"
+                name="invitee"
+                placeholder="Person ID or Email Address or SIP URI or Room ID"
+                placeholder="Person ID or Email Address or SIP URI or Room ID"
+                type="text">
+          </div>
+          <div class="small-2 columns">
+            <button title="dial" id="dial" type="button" class="md-button">Dial</button>
+          </div>
+        </div>
+        <div class="row">
+          <p style="color:white;">.</p>
+        </div>
+        <div class="row">
+          <div class="md-input-group small-1 columns">
+            <button id="hangup" title="hangup" type="button" class="md-button md-button--circle md-button--red icon icon-cancel_36"></button>
+          </div>
+          <div class="md-input-group small-1 columns">
+            <div id="local" class="md-avatar md-avatar--inactive" title="Shannon Sangha">
+              <span class="md-avatar__letter">SS</span>
+            </div>
+          </div>
+          <div class="md-input-group small-1 columns">
+            <div id="remote" class="md-avatar md-avatar--inactive" title="Tommy Woodley">
+              <span class="md-avatar__letter">TW</span>
+            </div>
+          </div>
+          <div class="md-input-group small-9 columns">
+
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <p style="color:white;">.</p>
+      </div>
+      <div style="display: flex" class="row">
+        <video style="width:0%" id="self-view" muted autoplay playsinline></video>
+        <canvas style="width:50%;padding-top: 0%;" id="self-view-canvas"></canvas>
+        <audio id="remote-view-audio" autoplay playsinline></audio>
+        <video style="width:50%" id="remote-view-video" autoplay playsinline></video>
+      </div>
+      <div class="row">
+        <div class="md-input-group medium-6 columns">
+          <input class="md-input" id="readonlyInput" type="text" value="Read Only Text" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <p style="color:white;">.</p>
+      </div>
+      <div class="row">
+        <div class="md-input-container md-toggle-switch ">
+          <input
+              class="md-input md-toggle-switch__input"
+              type="checkbox"
+              aria-checked="false"
+              name=""
+              id="testToggleSwitch1"
+              value=""
+          />
+          <label class="md-toggle-switch__label" for="testToggleSwitch1">
+            <span class="md-toggle-switch__label__container"></span>
+            <span class="md-toggle-switch__label__text">Eng/Chi</span>
+          </label>
+        </div>
+      </div>
+    </main>
+
+    <!-- app.js is your application code -->
+    <script src="app.js"></script>
+  </body>
+</html>
